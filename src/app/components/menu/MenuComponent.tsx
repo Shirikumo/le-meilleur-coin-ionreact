@@ -12,7 +12,14 @@ import {
 
 import React from "react";
 import { useLocation } from "react-router-dom";
-import { homeOutline, homeSharp, gridOutline, gridSharp } from "ionicons/icons";
+import {
+  homeOutline,
+  homeSharp,
+  gridOutline,
+  gridSharp,
+  addOutline,
+  addSharp,
+} from "ionicons/icons";
 import "./Menu.css";
 
 interface AppPage {
@@ -35,6 +42,12 @@ const appPages: AppPage[] = [
     iosIcon: gridOutline,
     mdIcon: gridSharp,
   },
+  {
+    title: "Publier une annonce",
+    url: "/advertisement",
+    iosIcon: addOutline,
+    mdIcon: addSharp,
+  },
 ];
 
 const Menu: React.FC = () => {
@@ -44,8 +57,8 @@ const Menu: React.FC = () => {
     <IonMenu contentId="main" type="overlay">
       <IonContent>
         <IonList id="inbox-list">
-          <IonListHeader>Menu</IonListHeader>
-          <IonNote>t.dalleau@ecole-ipssi.net</IonNote>
+          <IonListHeader>LeMeilleurCoin</IonListHeader>
+          <IonNote>Le bon coin en mieux ! (askip)</IonNote>
           {appPages.map((appPage, index) => {
             return (
               <IonMenuToggle key={index} autoHide={false}>
